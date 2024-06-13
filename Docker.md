@@ -22,6 +22,26 @@ This is a sheetcheat/ tips on how to use Docker to create and manage containers
 
 ### Docker Commands in Docker CLI
 
+- Pull Image
+```bash
+docker pull {image_name}:{tag} 
+```
+
+- Build Image
+```bash
+docker build -t {image_name}:{tag} .
+```
+
+- List Images
+```bash
+docker image ls
+```
+
+- Run Container
+```bash
+docker run -d -p {machine port}:{container port} --name {container_name} {image_name}:{tag}
+```
+
 - Delete All Unused Images
 ```bash
 docker image prune -a
@@ -30,9 +50,4 @@ docker image prune -a
 - Delete All Unused Containers
 ```bash
 docker container rm $(docker container ls -aq)
-```
-
-- Build Image
-```bash
-docker build -t (image_name):(tag) .
 ```
