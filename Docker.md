@@ -52,3 +52,11 @@ docker image prune -a
 ```bash
 docker container rm $(docker container ls -aq)
 ```
+
+### Docker Compose Commands
+
+- Pull Image
+```bash
+docker compose up
+docker compose down
+```
