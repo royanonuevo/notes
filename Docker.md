@@ -30,6 +30,7 @@ docker pull {image_name}:{tag}
 - Build Image
 ```bash
 docker build -t {image_name}:{tag} .
+docker build -f Dockerfile.dev -t {image_name}:{tag} .
 ```
 
 - List Images
