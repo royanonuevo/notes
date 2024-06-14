@@ -56,5 +56,9 @@ docker container rm $(docker container ls -aq)
 ### Docker Compose Commands
 ```bash
 docker compose up
+docker compose up client-dev
+docker compose up client-prod
+
 docker compose down
+
 ```
