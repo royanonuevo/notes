@@ -31,6 +31,7 @@ docker pull {image_name}:{tag}
 ```bash
 docker build -t {image_name}:{tag} .
 docker build -f Dockerfile.dev -t {image_name}:{tag} .
+docker build --platform linux/amd64 -t anonuevoroy/my-ui-library .
 ```
 
 - List Images
