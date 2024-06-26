@@ -19,6 +19,8 @@ docker login
 ```bash
 docker build -t {image_name}:{tag} .
 docker build -f Dockerfile.dev -t {image_name}:{tag} .
+docker build -f Dockerfile.dev -t anonuevoroy/my-ui-library .
+docker build --platform linux/amd64 -f Dockerfile.dev -t anonuevoroy/my-ui-library .
 ```
 
 #3. Push Image in Docker Hub
