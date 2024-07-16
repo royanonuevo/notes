@@ -44,9 +44,9 @@ docker image ls
 docker run -d -p {machine port}:{container port} --name {container_name} {image_name}:{tag}
 ```
 
-- Delete All Unused Images
+- Delete All Images
 ```bash
-docker image prune -a
+docker rmi -f $(docker images -aq)
 ```
 
 - Delete All Unused Containers
