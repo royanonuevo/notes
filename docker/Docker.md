@@ -54,7 +54,7 @@ docker rmi -f $(docker images -aq)
 docker container rm $(docker container ls -aq) // Delete All Unused Containers
 docker stop $(docker ps -a -q) // Stop all the containers
 docker rm $(docker ps -a -q) // Remove all the containers
-docker rm -f $(docker ps -aq)
+sudo kill -9 `sudo lsof -t -i:9000`
 ```
 
 ### Docker Compose Commands
