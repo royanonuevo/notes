@@ -49,9 +49,11 @@ docker run -d -p {machine port}:{container port} --name {container_name} {image_
 docker rmi -f $(docker images -aq)
 ```
 
-- Delete All Unused Containers
+- Delete Containers
 ```bash
-docker container rm $(docker container ls -aq)
+docker container rm $(docker container ls -aq) // Delete All Unused Containers
+docker stop $(docker ps -a -q) // Stop all the containers
+docker rm $(docker ps -a -q) // Remove all the containers
 ```
 
 ### Docker Compose Commands
