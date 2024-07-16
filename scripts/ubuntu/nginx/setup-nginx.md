@@ -1,12 +1,23 @@
-# How to install
+# Setup Nginx
 
 1. Create a file named `<script_name>.sh` in your server.
+
+    ```bash
+    nano setup-nginx.sh
+    ```
+   
 2. Copy the contents of `setup-nginx.sh` into your `<script_name>.sh` file in your server.
+    - After pasted, press Control `X` and `Y` and then press `Enter`
+    - Confirm using below command
+    ```bash
+    cat setup-nginx.sh
+    ```
+    
 3. Run `chmod ug+x <script_name>.sh` to give permission to execute the file. (Optional)
 4. Run `<script_name>.sh` file in your server to install the resource.
 
 ```bash
-sh <script_name>.sh
+sh setup-nginx.sh
 ```
 
 ## Additional Steps
