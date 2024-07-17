@@ -4,7 +4,7 @@
     Use below command to create file:
 
     ```bash
-    nano `setup-docker.sh`
+    nano setup-docker.sh
     ```
 
 2. Copy the contents of [setup-docker.sh](./setup-docker.sh) into your `setup-docker.sh` file in your server.
