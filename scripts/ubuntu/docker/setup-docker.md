@@ -7,7 +7,7 @@
     nano `setup-docker.sh`
     ```
 
-2. Copy the contents of `setup-docker.sh` into your `setup-docker.sh` file in your server.
+2. Copy the contents of [setup-docker.sh](./setup-docker.sh) into your `setup-docker.sh` file in your server.
     - Press Control `X` and `Y` and then Press `Enter`
 
 3. You can confirm the content using this command:
