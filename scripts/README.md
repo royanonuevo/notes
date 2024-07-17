@@ -4,7 +4,8 @@
     - Generate and Add SSH
     - Access the server via SSH
 2. Install `docker` in the server using **setup-docker.sh**
-    - Make `scripts` directory
+    - Create `scripts` and `docker` folder
+    - cd inside `scripts`
     - Create and run [setup-docker.sh](./ubuntu/docker/setup-docker.md)
 
 3. install `nginx` in the server using **setup-nginx.sh**
