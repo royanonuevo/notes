@@ -19,12 +19,7 @@
     sh setup-docker.sh
     ```
 
-5. 
-    ```bash
-    sudo usermod -a -G docker root
-    ```
-
-**when you got error about docker connect:**
+5.  **when you got error about docker connect:**
 https://medium.com/@praveenadoni4456/error-got-permission-denied-while-trying-to-connect-to-the-docker-daemon-socket-at-e68bfab8146a
 
 
