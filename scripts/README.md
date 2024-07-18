@@ -1,4 +1,4 @@
-# How to Deploy and setup CI/CD
+# How to Deploy and Setup CI/CD
 
 1. Setup VPS server or launch new ec2 instance (ubuntu)
     - Generate and Add SSH
