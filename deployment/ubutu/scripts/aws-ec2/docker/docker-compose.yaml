@@ -1,0 +1,7 @@
+name: aws-cicd
+
+services:
+  app:
+    image: anonuevoroy/aws-cicd:latest
+    ports:
+      - 80:3000

@@ -1,4 +1,4 @@
-# How to Deploy and Setup CI/CD
+# How to Deploy and Setup CI/CD in Ubuntu OS
 
 1. Setup VPS server or launch new ec2 instance (ubuntu)
     - Generate and Add SSH
@@ -6,11 +6,11 @@
 2. Install `docker` in the server using **setup-docker.sh**
     - Create `scripts` and `docker` folder
     - cd inside `scripts`
-    - Create and run [setup-docker.sh](./ubuntu/docker/setup-docker.md)
+    - Create and run [setup-docker.sh](./docker/setup-docker.md)
 
 3. install `nginx` in the server using **setup-nginx.sh**
     - Inside "scripts" folder 
-    - Create and run [setup-nginx.sh](./ubuntu/nginx/setup-nginx.md)
+    - Create and run [setup-nginx.sh](./nginx/setup-nginx.md)
 4. (If you want to try to skip ci/cd and directly deploy the application) Pull the docker image in the server and run the image container
 
 ___

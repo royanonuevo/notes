@@ -1,0 +1,7 @@
+name: my-ui-library
+
+services:
+  app:
+    image: anonuevoroy/my-ui-library:latest
+    ports:
+      - 9000:9000
