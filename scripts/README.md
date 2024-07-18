@@ -13,6 +13,7 @@
     - Create and run [setup-nginx.sh](./ubuntu/nginx/setup-nginx.md)
 4. (If you want to try to skip ci/cd and directly deploy the application) Pull the docker image in the server and run the image container
 
+___
 
 ## Add Github Action
 1. In your github repository `settings > Secrets and variables > Actions > Secrets Tab > Repository secrets`, provide the following secrets:
