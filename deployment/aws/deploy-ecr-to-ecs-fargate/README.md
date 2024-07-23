@@ -44,4 +44,4 @@ Reference: [https://www.youtube.com/watch?v=wLsWALjM-Uk](https://www.youtube.com
    - AWS_ACCOUNT_ID 
 3. `access key id` and `secret key` can able to get from AWS `IAM` > `Users` > `Securiy Credentials`
    - Setup [AWS CLI On Linux Reference](https://www.youtube.com/watch?v=1OqMQPx8Jno)
-4. Sample [github yaml file](./github/workflows/deploy-to-ecs.yaml)
+4. Sample [github yaml file](./.github/workflows/deploy-to-ecs.yaml)
