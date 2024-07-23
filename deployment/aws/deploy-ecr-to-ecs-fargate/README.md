@@ -45,3 +45,7 @@ Reference: [https://www.youtube.com/watch?v=wLsWALjM-Uk](https://www.youtube.com
 3. `access key id` and `secret key` can able to get from AWS `IAM` > `Users` > `Securiy Credentials`
    - Setup [AWS CLI On Linux Reference](https://www.youtube.com/watch?v=1OqMQPx8Jno)
 4. Sample [github yaml file](./.github/workflows/deploy-to-ecs.yaml)
+
+---
+## Clean Up Old Images in ECR Using ECR Lifecycle Policies
+https://blog.stackademic.com/cleanup-old-images-in-ecr-using-ecr-lifecycle-policies-e7cbf60e9827
