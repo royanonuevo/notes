@@ -42,6 +42,6 @@ Reference: [https://www.youtube.com/watch?v=wLsWALjM-Uk](https://www.youtube.com
    - AWS_ACCESS_KEY_ID 
    - AWS_SECRET_ACCESS_KEY
    - AWS_ACCOUNT_ID 
-** access key id and secret key can able to get from AWS `IAM` > `Users` > `Securiy Credentials` **
-** Setup [AWS CLI On Linux Reference](https://www.youtube.com/watch?v=1OqMQPx8Jno)
+access key id and secret key can able to get from AWS `IAM` > `Users` > `Securiy Credentials`
+   - Setup [AWS CLI On Linux Reference](https://www.youtube.com/watch?v=1OqMQPx8Jno)
 
