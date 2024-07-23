@@ -19,6 +19,7 @@
       - Source: Anywhere
 5. Copy the `public ip` address and test it in the browser
 __
+
 ## Add Load Balancer
 1. Create New `Load Balancer` > Select `Application Load Balancer`
 2. Select `Internet-facing`
@@ -31,6 +32,7 @@ __
    4. Make sure to click the `Include as pending below` button
 6. Copy the `DNS name` and test
 __
+
 ## Add Github Action
 Reference: [https://www.youtube.com/watch?v=wLsWALjM-Uk](https://www.youtube.com/watch?v=wLsWALjM-Uk)
 1. Prepare the following variables:
