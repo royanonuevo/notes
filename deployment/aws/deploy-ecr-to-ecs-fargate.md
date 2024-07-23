@@ -16,8 +16,6 @@
    - Under Networking, Choose a security Group with the port same with your `NextJS App Port` as a `Container Port`
 5. Copy the `public ip` address and test it in the browser
 
-___
-
 ## Add Load Balancer
 1. Create New `Load Balancer` > Select `Application Load Balancer`
 2. Select `Internet-facing`
