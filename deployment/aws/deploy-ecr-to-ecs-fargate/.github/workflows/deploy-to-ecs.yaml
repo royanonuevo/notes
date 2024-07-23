@@ -1,58 +1,66 @@
-name: Deploy 
+name: Deploy To ECS
 
 on:
   push:
     branches: 
       - main
 
+env:
+  # Setting an environment variable with the value of a configuration variable
+  ECR_IMAGE_NAME: ${{ vars.ECR_IMAGE_NAME }}
+  AWS_DEFAULT_REGION: ${{ vars.AWS_DEFAULT_REGION }}
+  ECS_CLUSTER_NAME: ${{ vars.ECS_CLUSTER_NAME }}
+  ECS_SERVICE_NAME: ${{ vars.ECS_SERVICE_NAME }}
+
 jobs:
   build-and-push:
-    name: build and upload image
+    name: build and deploy image
     runs-on: ubuntu-latest
+    
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      -
-        name: Login to Docker Hub
-        uses: docker/login-action@v3
-        with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
-      -
-        name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
-      -
-        name: Build and push
-        uses: docker/build-push-action@v6
-        with:
-          file: ./Dockerfile.prod
-          push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/aws-cicd:latest
-
-  deploy:
-    needs: [build-and-push]
-    name: deploy image
-    runs-on: ubuntu-latest
-    steps:
-      -
+      - 
         name: Checkout
         uses: actions/checkout@v3
-
-      - name: Copy Docker Compose & Script to Server via SSH
-        uses: appleboy/scp-action@v0.1.7
-        with: 
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USER }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          # port: ${{ secrets.SSH_PORT }}
-          source: 'docker/docker-compose.yaml,scripts/deploy.sh'
-          target: '/home/ubuntu'
-
-      - name: SSH and Deploy
-        uses: appleboy/ssh-action@v1.0.3
+      # - 
+      #   name: Set up QEMU for arm64
+      #   run: |
+      #     docker run --rm --privileged multiarch/aws-cicd-nextjs --reset -p yes
+      #   if: runner.os == 'Linux'
+      # - 
+      #   name: Set up Docker for arm64
+      #   uses: docker/setup-qemu-action@v2
+      #   with:
+      #     platforms: linux/arm64
+      - 
+        name: Set up Docker
+        uses: docker/setup-buildx-action@v3
+      - 
+        name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v2
         with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USER }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          # port: ${{ secrets.SSH_PORT }}
-          script: sh /home/ubuntu/scripts/deploy.sh
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ vars.AWS_DEFAULT_REGION }}
+      - 
+        name: Login to Amazon ECR
+        run: |
+          aws ecr get-login-password --region $AWS_DEFAULT_REGION | docker login --username AWS --password-stdin ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com
+      -
+        name: Remove All Images
+        run: |
+          docker image prune -a -f
+      - 
+        name: Build and push Docker image
+        run: |
+          docker buildx create --use
+          docker buildx inspect --bootstrap
+          docker buildx build  -f Dockerfile.prod -t ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$ECR_IMAGE_NAME:latest --push .
+      - 
+        name: Deploy to ECS
+        uses: imehedi/actions-awscli-v2@latest
+        with:
+          args: ecs update-service --cluster ${{ vars.ECS_CLUSTER_NAME }} --service ${{ vars.ECS_SERVICE_NAME }} --force-new-deployment
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_DEFAULT_REGION: ${{ vars.AWS_DEFAULT_REGION }}
