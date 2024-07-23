@@ -45,12 +45,8 @@ jobs:
         name: Login to Amazon ECR
         run: |
           aws ecr get-login-password --region $AWS_DEFAULT_REGION | docker login --username AWS --password-stdin ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com
-      -
-        name: Remove All Images
-        run: |
-          docker image prune -a -f
       - 
-        name: Build and push Docker image
+        name: Build and push Docker Image
         run: |
           docker buildx create --use
           docker buildx inspect --bootstrap
