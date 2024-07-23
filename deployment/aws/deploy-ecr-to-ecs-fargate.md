@@ -33,4 +33,15 @@ __
 __
 ## Add Github Action
 Reference: [https://www.youtube.com/watch?v=wLsWALjM-Uk](https://www.youtube.com/watch?v=wLsWALjM-Uk)
-1. Prepare the following 
+1. Prepare the following variables:
+   - ECR_IMAGE_NAME
+   - ECS_CLUSTER_NAME
+   - ECS_SERVICE_NAME
+   - AWS_DEFAULT_REGION
+2. Prepare the following secrets:
+   - AWS_ACCESS_KEY_ID 
+   - AWS_SECRET_ACCESS_KEY
+   - AWS_ACCOUNT_ID 
+   ** access key id and secret key can able to get from AWS `IAM` > `Users` > `Securiy Credentials` **
+   ** Setup [AWS CLI On Linux Reference](https://www.youtube.com/watch?v=1OqMQPx8Jno): 
+
