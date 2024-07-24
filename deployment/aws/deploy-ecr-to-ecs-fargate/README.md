@@ -20,6 +20,7 @@
 5. Copy the `public ip` address and test it in the browser
 ---
 ## Add Load Balancer
+Reference: [https://www.youtube.com/watch?v=V-y1rzHoq08](https://www.youtube.com/watch?v=V-y1rzHoq08)
 1. Create New `Load Balancer` > Select `Application Load Balancer`
 2. Select `Internet-facing`
 3. Under Network Mapping, select all available
