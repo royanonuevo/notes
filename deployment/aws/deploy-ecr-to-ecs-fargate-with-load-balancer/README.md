@@ -19,7 +19,7 @@ Under `EC2` > **Load Balancing** (Sidebar) > `Target Groups`
 ## 3. Create Load Balancer
 Under `EC2` > **Load Balancing** (Sidebar) > `Load Balancers`
 - Load balancer types: `Application Load Balancer`
-- Load balancer name: Put a name you want ex: next-elb
+- Load balancer name: Put a name you want ex: nextjs-alb
 - Under Mappings, Select all availability zones
 - Security Group: Select the existing security group you created for **ALB-SG** 
 
