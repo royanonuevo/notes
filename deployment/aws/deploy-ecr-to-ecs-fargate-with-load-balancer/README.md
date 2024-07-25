@@ -27,16 +27,23 @@ Under `EC2` > **Load Balancing** (Sidebar) > `Load Balancers`
    - Port: `80`
    - Default action: `Select the target group you created`
 
-## 4. ECR and ECS Setup
+## 4. ECR Setup
 1. Create **ECR Repository** and upload the docker images
-2. Create **ECS Cluster**
+2. Install AWS CLI in local machine
+3. Create user to access aws cli
+- Reference: 
+- (https://www.youtube.com/watch?v=1OqMQPx8Jno)[https://www.youtube.com/watch?v=1OqMQPx8Jno]
+- (https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)[https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html]
+   
+## 5. ECS Setup
+1. Create **ECS Cluster**
    - For Infrastructure, select `AWS Fargate`
-3. Create **ECS Task Definition** 
+2. Create **ECS Task Definition** 
    - For Infrastructure, select `AWS Fargate`
    - Operating system/Architecture: `Linux/X86_64`
    - For Container imageUri copy the imageUri you uploaded from ECR Repository
    - For Port Mapping, Container Port: Put the `NextJS App Port` as a `Container Port` ex: `3000`
-4. Create **Service**
+3. Create **Service**
    - Under the `ECS Cluster` you created, create `service`
    - Compute options: `Launch Type`
    - Application Type: `Service`
@@ -49,7 +56,7 @@ Under `EC2` > **Load Balancing** (Sidebar) > `Load Balancers`
       - Listener: `Use the existing Listener you created '80:HTTP'`
       - Target group: `Use the existing target group you created `
 
-## 5. Testing
+## 6. Testing
 1. AWS has bugs, check the existing security group you created and modify or add again inbound rules if needed
 2. Check if all task is in `running` status
 3. Check if all registered target in `Target Group` you created is `Healthy`
@@ -57,7 +64,7 @@ Under `EC2` > **Load Balancing** (Sidebar) > `Load Balancers`
 
 
 
-## 6. Add Github Action
+## 7. Add Github Action
 Reference: [https://www.youtube.com/watch?v=wLsWALjM-Uk](https://www.youtube.com/watch?v=wLsWALjM-Uk)
 1. Prepare the following variables:
    - ECR_IMAGE_NAME
