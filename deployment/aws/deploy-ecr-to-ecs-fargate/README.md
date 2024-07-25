@@ -14,9 +14,13 @@
    - Family: Choose the task definition you created
    - Add Service Name you want
    - Under Networking, choose a security Group with the port same with your `NextJS App Port` as a `Container Port` or Create New:
-      - Type: Custom TCP
-      - Port: same with your `NextJS App Port` as a `Container Port`
-      - Source: Anywhere
+         1. Inbound Rules: 
+            - Type: `Custom TCP`
+            - Port Range: `3000`
+            - Source: `Anywhere-IPv4` (0.0.0.0/0)
+         2. Outbound Rules: 
+            - Type: `All Traffic`
+            - Source: `Anywhere-IPv4` (0.0.0.0/0)
 5. Copy the `public ip` address and test it in the browser
 ---
 ## Add Load Balancer
