@@ -21,7 +21,11 @@ Under `EC2` > **Load Balancing** (Sidebar) > `Load Balancers`
 - Load balancer types: `Application Load Balancer`
 - Load balancer name: Put a name you want ex: nextjs-alb
 - Under Mappings, Select all availability zones
-- Security Group: Select the existing security group you created for **ALB-SG** 
+- Security Group: Select the existing security group you created for **ALB-SG**
+- Under Listeners and routing:
+   - Protocol: `HTTP`
+   - Port: `80`
+   - Default action: `Select the target group you created`
 
 ## 4. ECR and ECS Setup
 1. Create **ECR Repository** and upload the docker images
