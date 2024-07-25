@@ -31,7 +31,8 @@ Under `EC2` > **Load Balancing** (Sidebar) > `Load Balancers`
 1. Create **ECR Repository** and upload the docker images
 2. Install AWS CLI in local machine
 3. Create user to access aws cli
-- Reference: 
+
+**Reference:**
 - (https://www.youtube.com/watch?v=1OqMQPx8Jno)[https://www.youtube.com/watch?v=1OqMQPx8Jno]
 - (https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)[https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html]
    
