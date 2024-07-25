@@ -33,8 +33,8 @@ Under `EC2` > **Load Balancing** (Sidebar) > `Load Balancers`
 3. Create user to access aws cli
 
 **Reference:**
-- (https://www.youtube.com/watch?v=1OqMQPx8Jno)[https://www.youtube.com/watch?v=1OqMQPx8Jno]
-- (https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)[https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html]
+- [https://www.youtube.com/watch?v=1OqMQPx8Jno](https://www.youtube.com/watch?v=1OqMQPx8Jno)
+- [https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
    
 ## 5. ECS Setup
 1. Create **ECS Cluster**
