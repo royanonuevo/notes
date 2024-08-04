@@ -2,4 +2,4 @@
 
 - visual studio code
 - iterm2
-- [fnm](https://github.com/Schniz/fnm)
+- [nvm](https://github.com/nvm-sh/nvm)
