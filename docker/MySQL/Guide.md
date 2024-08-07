@@ -2,11 +2,11 @@
 
 1. Copy the `docker-compose.yml` and modify the environment variables if needed
 2. run the command: `docker compose up`
-3. Open `MySQL Workbech` app
+3. Open `MySQL Workbench` app
 4. Create a new connection
     - Connection Name: `a name you want`
-    - Username: `env.MYSQL_USER`
-    - Password: `env.MYSQL_PASSWORD`
+    - Username: `root`
+    - Password: `<root password`
     - Port: `3306`
 
 
