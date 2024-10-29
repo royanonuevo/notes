@@ -6,7 +6,7 @@
 4. Create a new connection
     - Connection Name: `a name you want`
     - Username: `root`
-    - Password: `<root password`
+    - Password: `rootpassword`
     - Port: `3306`
 
 
